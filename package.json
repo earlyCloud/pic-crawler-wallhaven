@@ -1,0 +1,19 @@
+{
+  "name": "crawler practice",
+  "version": "1.0.0",
+  "description": "a simple crawler",
+  "main": "crawler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "crawler"
+  ],
+  "author": "yun",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "crawler": "^1.2.0",
+    "koa": "^2.6.2"
+  }
+}
