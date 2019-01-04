@@ -9,4 +9,9 @@ to get start with:
 or with your query string:  
 `$ node crawler your query string`        
   
-then enjoy it.
+then enjoy it.  
+
+# example 
+`$ node crawler beautiful snow in trees`  
+# issues
+Chinese is not supported in site wallhaven
