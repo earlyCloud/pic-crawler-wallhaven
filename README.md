@@ -12,6 +12,6 @@ or with your query string:
 then enjoy it.  
 
 # example 
-`$ node crawler beautiful snow in trees`  
+`$ node crawler beautiful snow on trees`  
 # issues
 Chinese is not supported in site wallhaven
