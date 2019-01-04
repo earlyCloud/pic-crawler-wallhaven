@@ -7,10 +7,10 @@ const cheerio = require('cheerio')
 let page = 1, 
 args = process.argv.slice(2),
 dist = './images/',
-queryString = args.length ? args[0] : "",
+queryString = args.length ? args.join('+') : "",
 emptyCount = 0
 
-queryString && (dist = dist + queryString + '/')
+queryString && (dist = dist + queryString.replace(/\+/g, ' ') + '/')
 
 getList()
 
@@ -26,7 +26,7 @@ function getImg(imgOption){
 		},
 		callback(err, res, done){
 			if(err){
-				console.log('err', error)
+				console.log('err', err)
 			}else{
 				if(res.statusCode === 200){
 					if(!fs.existsSync(dist)){
@@ -86,15 +86,15 @@ function getList(){
 					$(link).attr('href') && urlArr.push($(link).attr('href'))
 				})
 				console.log(`page: ${ page }`, urlArr)
-				if(page < 100){
-					page ++ 
-					getDetailPage(urlArr)
-					if(urlArr.length){
-						setTimeout(getList, 60000)
-					}else if(emptyCount < 3){
-						emptyCount ++ 
-						getList()
-					}
+				page ++ 
+				getDetailPage(urlArr)
+				if(urlArr.length){
+					setTimeout(getList, 60000)
+				}else if(emptyCount < 3){
+					emptyCount ++ 
+					getList()
+				}else{
+					process.exit(0)
 				}
 			}
 			done()
