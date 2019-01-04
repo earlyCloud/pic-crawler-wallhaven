@@ -94,7 +94,8 @@ function getList(){
 					emptyCount ++ 
 					getList()
 				}else{
-					process.exit(0)
+					console.log('no more list')
+					/*process.exit(0)*/
 				}
 			}
 			done()
