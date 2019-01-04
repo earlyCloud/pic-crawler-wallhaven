@@ -1,8 +1,10 @@
 # pic-crawler-wallhaven
 a small picture crawler in site wallhaven  
 
-# node crawler  
-or with your query string  
-# node crawler ***    
+node required  
+to get start with:
+node crawler  
+or with your query string:  
+node crawler ***    
   
 then enjoy it
